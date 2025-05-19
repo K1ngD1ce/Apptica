@@ -1,0 +1,31 @@
+:root {
+  --content-width: 1596px;
+  --container-offset: 20px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // Color
+  --absolute-white: #fff;
+  --absolute-black: #000;
+
+
+  // Fonts
+  --font-family: "Lexend", sans-serif;
+  --second-family: "Inter", sans-serif;
+
+  // Media
+  @media (max-width: 1440px) {
+    --content-width: 1279px !important;
+  }
+
+  @media (max-width: 1199px) {
+    --content-width: 940px !important;
+  }
+
+  @media (max-width: 991px) {
+    --content-width: 700px !important;
+  }
+
+  @media (max-width: 768px) {
+    --content-width: 520px !important;
+  }
+}

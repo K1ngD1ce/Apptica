@@ -1,7 +1,9 @@
+import MainPage from "./pages/main/ui/MainPage";
+
 function App() {
   return (
     <>
-      <h1>123123</h1>
+      <MainPage/>
     </>
   );
 }

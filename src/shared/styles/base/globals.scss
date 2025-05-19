@@ -1,0 +1,142 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--absolute-black);
+  line-height: 1;
+
+  &.no-scroll {
+    overflow-y: scroll;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    touch-action: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 48px;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  box-shadow: none;
+  outline: none;
+}
+
+input:-webkit-autofill {
+  background-color: white !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  color: var(--c-grey) !important;
+}
+
+a {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--c-dark);
+  text-decoration: none;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+hr {
+  margin: 0;
+  border-color: var(--c-grey-15);
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  text-align: unset;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 calc(var(--container-offset)) 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.list__reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paragraph-reset p {
+  margin: 0;
+}
+
+
+.text {
+  font-weight: 300;
+  line-height: 150%;
+  color: var(--absolute-black);
+}
+
+.custom__btn {
+  position: relative;
+  overflow: hidden;
+  float: left;
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: var(--absolute-white);
+    transform: scale(0);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: 0;
+  }
+
+  &:hover {
+    color: var(--grey-10);
+  }
+
+  &:hover::before {
+    transform: scale(1, 1);
+  }
+}
