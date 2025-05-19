@@ -1,0 +1,15 @@
+.categoryItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfe2ea;
+
+    .colorBox {
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        background-color: red;
+
+    }
+}
