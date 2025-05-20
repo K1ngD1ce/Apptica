@@ -88,10 +88,15 @@ button {
 
 .widgetContainer {
   position: relative;
+  height: 950px;
   border-radius: 20px;
   background-color: var(--absolute-white);
- box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1),
-            -4px -4px 12px rgba(255, 255, 255, 0.6);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1),
+    -4px -4px 12px rgba(255, 255, 255, 0.6);
+}
+
+.loadContainer {
+  padding: 25px 50px;
 }
 
 .container {
@@ -106,10 +111,9 @@ button {
   padding: 0;
 }
 
-.paragraph-reset p {
+.paraChart-reset p {
   margin: 0;
 }
-
 
 .text {
   font-weight: 300;
@@ -150,3 +154,19 @@ button {
     transform: scale(1, 1);
   }
 }
+
+@media (max-width: 992px) {
+  .widgetContainer {
+    height: 810px;
+  }
+}
+
+@media (max-width: 525px) {
+  body {
+    padding: 10px 15px;
+  }
+}
+
+
+
+

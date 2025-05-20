@@ -1,0 +1,24 @@
+.Chart__section {
+  padding-top: 50px;
+  padding-bottom: 25px;
+
+  .ChartCanvas {
+    position: relative;
+    width: 100%;
+    height: 690px;
+  }
+
+  @media (max-width: 992px) {
+    .ChartCanvas {
+      height: 490px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 25px;
+
+    .ChartCanvas {
+      height: 350px;
+    }
+  }
+}

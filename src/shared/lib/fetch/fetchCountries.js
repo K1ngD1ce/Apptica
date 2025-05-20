@@ -9,8 +9,9 @@ export const fetchCountries = async () => {
     const list = res.data.data
       .filter((c) => c.active)
       .map((c) => ({
+        id: c.id,
         value: c.name,
-        label: c.name,
+        label: c.country,
         icon: c.icon,
       }));
 
