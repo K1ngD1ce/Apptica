@@ -1,11 +1,10 @@
 import cls from "./HeaderPanel.module.scss";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import {Box, Button} from "@mui/joy";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-
+import { useDownloadChart } from "../../../shared/lib/useDownloadChart";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCountries } from "../../../shared/lib/fetch/fetchCountries";
@@ -14,7 +13,8 @@ import {
   setSelectedCountry,
 } from "../model/selectedCountrySlice";
 
-export default function HeaderPanel() {
+export default function HeaderPanel({chartRef, chartData}) {
+  const { downloadPNG, downloadCSV } = useDownloadChart(chartRef, chartData);
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.country.countries);
   const selectedCountry = useSelector((state) => state.country.selectedCountry);
@@ -43,10 +43,10 @@ export default function HeaderPanel() {
   return (
     <div className={cls.headerPanel}>
       <Box sx={{ "& button": { m: 1 } }}>
-        <Button variant="outlined" size="big">
+        <Button variant="outlined" size="lg" onClick={downloadPNG}>
           PNG
         </Button>
-        <Button variant="outlined" size="big">
+        <Button variant="outlined" size="lg" onClick={downloadCSV}>
           CSV
         </Button>
       </Box>

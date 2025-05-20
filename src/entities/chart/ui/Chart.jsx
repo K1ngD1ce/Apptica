@@ -31,7 +31,7 @@ ChartJS.register(
   Legend
 );
 
-export default function Chart() {
+export default function Chart({onReady}) {
   const dispatch = useDispatch();
   const [chartData, setChartData] = useState(null);
   const [fontSize, setFontSize] = useState(getResponsiveFontSize())
@@ -69,6 +69,12 @@ export default function Chart() {
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (chartData && chartRef.current) {
+      onReady?.({ chartRef, chartData });
+    }
+  }, [chartData, onReady]);
 
   useEffect(() => {
     if (!selectedCountry) return;
